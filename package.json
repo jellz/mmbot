@@ -9,6 +9,7 @@
   "dependencies": {
     "discord.js": "hydrabolt/discord.js",
     "klasa": "dirigeants/klasa",
-    "rethinkdbdash": "^2.3.31"
+    "rethinkdbdash": "^2.3.31",
+    "to-zalgo": "^1.0.1"
   }
 }
