@@ -1,0 +1,14 @@
+{
+  "name": "mmbot",
+  "version": "1.0.0",
+  "description": "i'm making another discord bot",
+  "main": "index.js",
+  "repository": "git@github.com:jellz/mmbot.git",
+  "author": "Daniel G <xdjellz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "hydrabolt/discord.js",
+    "klasa": "dirigeants/klasa",
+    "rethinkdbdash": "^2.3.31"
+  }
+}
