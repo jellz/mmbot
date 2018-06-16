@@ -1,7 +1,7 @@
 const { Client } = require('klasa');
 const { token, ownerId } = require('./config.json');
 
-new Client({
+const client = module.exports = new Client({
     clientOptions: {
         disableEveryone: true
     },
@@ -16,4 +16,7 @@ new Client({
     },
     providers: { rethinkdb: { db: 'mmbot' } },
     readyMessage: (client) => client.user.tag + ' is ready :)'
-}).login(token);
+});
+client.login(token);
+
+require('./web/web.js')();
