@@ -1,4 +1,5 @@
 const { Command, util } = require('klasa');
+const { baseUri } = require('../../config.json');
 
 module.exports = class extends Command {
 
@@ -7,62 +8,11 @@ module.exports = class extends Command {
 			aliases: ['commands', 'helpme'],
 			guarded: true,
 			description: 'You need help? We\'ve got you covered',
-			usage: '(Command:command)'
-		});
-
-		this.createCustomResolver('command', (arg, possible, message) => {
-			if (!arg || arg === '') return undefined;
-			return this.client.arguments.get('command').run(arg, possible, message);
 		});
 	}
 
-	async run(message, [command]) {
-		const method = this.client.user.bot ? 'author' : 'channel';
-		if (command) {
-			const info = [
-				`= ${command.name} = `,
-				util.isFunction(command.description) ? command.description(message) : command.description,
-				message.language.get('COMMAND_HELP_USAGE', command.usage.fullUsage(message)),
-				message.language.get('COMMAND_HELP_EXTENDED'),
-				util.isFunction(command.extendedHelp) ? command.extendedHelp(message) : command.extendedHelp
-			].join('\n');
-			return message.sendMessage(info, { code: 'asciidoc' });
-		}
-		const help = await this.buildHelp(message);
-		const categories = Object.keys(help);
-		const helpMessage = [];
-		for (let cat = 0; cat < categories.length; cat++) {
-			helpMessage.push(`**${categories[cat]} Commands**:`, '```asciidoc');
-			const subCategories = Object.keys(help[categories[cat]]);
-			for (let subCat = 0; subCat < subCategories.length; subCat++) helpMessage.push(`= ${subCategories[subCat]} =`, `${help[categories[cat]][subCategories[subCat]].join('\n')}\n`);
-			helpMessage.push('```', '\u200b');
-		}
-
-		return message[method].send(helpMessage, { split: { char: '\u200b' } })
-			.then(() => { if (message.channel.type !== 'dm' && this.client.user.bot) message.sendMessage(message.language.get('COMMAND_HELP_DM')); })
-			.catch(() => { if (message.channel.type !== 'dm' && this.client.user.bot) message.sendMessage(message.language.get('COMMAND_HELP_NODM')); });
-	}
-
-	async buildHelp(message) {
-		const help = {};
-
-		const commandNames = [...this.client.commands.keys()];
-		const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
-
-		await Promise.all(this.client.commands.map((command) =>
-			this.client.inhibitors.run(message, command, true)
-				.then(() => {
-					if (!help.hasOwnProperty(command.category)) help[command.category] = {};
-					if (!help[command.category].hasOwnProperty(command.subCategory)) help[command.category][command.subCategory] = [];
-					const description = typeof command.description === 'function' ? command.description(message) : command.description;
-					help[command.category][command.subCategory].push(`${message.guildConfigs.prefix}${command.name.padEnd(longest)} :: ${description}`);
-				})
-				.catch(() => {
-					// noop
-				})
-		));
-
-		return help;
+	async run(msg) {
+		return msg.channel.send(`View the full list of commands at **${baseUri}/commands**. If you still need help, join the support server at https://discord.gg/t7qDVHD.`);
 	}
 
 };
