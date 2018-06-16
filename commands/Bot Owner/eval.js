@@ -24,11 +24,9 @@ module.exports = class extends Command {
 
 		// Handle too-long-messages
 		if (output.length > 2000) {
-			if (message.guild && message.channel.attachable) {
-				return message.channel.sendFile(Buffer.from(result), 'output.txt', message.language.get('COMMAND_EVAL_SENDFILE', time, footer));
+			if (message.guild) {
+				return message.channel.send('The output was larger than 2000 characters, so I uploaded the output to Hastebin.\n' + await require('hastebin-generator')(result) + '.js');
 			}
-			this.client.emit('log', result);
-			return message.sendMessage(message.language.get('COMMAND_EVAL_SENDCONSOLE', time, footer));
 		}
 
 		// If it's a message that can be sent correctly, send it

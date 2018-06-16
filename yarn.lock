@@ -24,6 +24,12 @@ fs-nextra@^0.3.2:
   version "0.3.5"
   resolved "https://registry.npmjs.org/fs-nextra/-/fs-nextra-0.3.5.tgz#6b70a5f84ba4dabd444c6408dce312e4731f60dc"
 
+hastebin-generator@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.npmjs.org/hastebin-generator/-/hastebin-generator-1.1.4.tgz#d331eba2529ceb375af35ffe5ccbf4947fb45161"
+  dependencies:
+    phin "^2.9.0"
+
 klasa@dirigeants/klasa:
   version "0.5.0-dev"
   resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/b03763a2ecb3e8ad046863aec0dbc69d5101f777"
@@ -37,6 +43,10 @@ multichar-regex@~2.0.0:
 pako@^1.0.0:
   version "1.0.6"
   resolved "https://registry.npmjs.org/pako/-/pako-1.0.6.tgz#0101211baa70c4bca4a0f63f2206e97b7dfaf258"
+
+phin@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.npmjs.org/phin/-/phin-2.9.0.tgz#c7ec9fcacbcf43da53936915404c62fafcd3046a"
 
 prism-media@^0.2.0:
   version "0.2.1"

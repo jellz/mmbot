@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "discord.js": "hydrabolt/discord.js",
+    "hastebin-generator": "^1.1.4",
     "klasa": "dirigeants/klasa",
     "rethinkdbdash": "^2.3.31",
     "to-zalgo": "^1.0.1"
