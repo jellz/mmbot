@@ -1,11 +1,11 @@
 const { Client } = require('klasa');
-const { token } = require('./config.json');
+const { token, prefix } = require('./config.json');
 
 const client = module.exports = new Client({
     clientOptions: {
         disableEveryone: true
     },
-    prefix: '%',
+    prefix,
     disabledCorePieces: ['commands'],
     cmdEditing: true,
     typing: false,
