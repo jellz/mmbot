@@ -5,9 +5,16 @@ module.exports = async () => {
 
     const client = require('../index.js');
 
-    app.get('/', (req, res) => {
-        res.send(client.user.tag);
-    });
+    app.use(require('morgan')('dev'));
+    app.use(require('helmet')());
+    app.use(express.json());
+    app.use('/assets', express.static('web/static'));
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'ejs');
 
-    app.listen(port, () => { console.log('mmbot-web listening on port ' + port); });
+    app.use(require('./routes/index.js'));
+
+    app.use((req, res) => { res.sendStatus(404); });
+
+    app.listen(port, () => { console.log('web listening on port ' + port); });
 }

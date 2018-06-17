@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('parts/head') %>
+    <title>Home &bullet; mmbot</title>
+</head>
+<body>
+    <%- include('parts/nav', { page: 'index' }) %>
+
+    <div class="jumbotron jumbotron-fluid jumbotron-home">
+        <div class="container">
+            <h1 class="display-4 text-white">mmbot</h1>
+            <p class="lead text-white jumbotron-home-typing"></p>
+        </div>
+    </div>
+
+    <%- include('parts/scripts.ejs') %>
+</body>
+</html>
