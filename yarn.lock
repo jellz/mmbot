@@ -94,7 +94,7 @@ destroy@~1.0.4:
 
 discord.js@hydrabolt/discord.js:
   version "12.0.0-dev"
-  resolved "https://codeload.github.com/hydrabolt/discord.js/tar.gz/1cdee7b48a13f571f563e7d8fe474908b64c4a5b"
+  resolved "https://codeload.github.com/hydrabolt/discord.js/tar.gz/d97af9d2e0a8c4cc3cd18b7b93ba6b93fe3772f6"
   dependencies:
     pako "^1.0.0"
     prism-media "^0.2.0"
@@ -278,7 +278,7 @@ ipaddr.js@1.6.0:
 
 klasa@dirigeants/klasa:
   version "0.5.0-dev"
-  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/b03763a2ecb3e8ad046863aec0dbc69d5101f777"
+  resolved "https://codeload.github.com/dirigeants/klasa/tar.gz/dec4375fa6a0549ddea9c3bc96324bdb78211dfc"
   dependencies:
     fs-nextra "^0.3.2"
 

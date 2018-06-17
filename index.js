@@ -1,5 +1,5 @@
 const { Client } = require('klasa');
-const { token, ownerId } = require('./config.json');
+const { token } = require('./config.json');
 
 const client = module.exports = new Client({
     clientOptions: {

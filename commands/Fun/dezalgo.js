@@ -4,8 +4,8 @@ module.exports = class extends Command {
 
 	constructor(...args) {
 		super(...args, {
-            description: 'Convert zalgo text into normal text',
-            usage: '<query:str> [...]'
+			description: 'Convert zalgo text into normal text',
+			usage: '<query:str> [...]'
 		});
 	}
 
