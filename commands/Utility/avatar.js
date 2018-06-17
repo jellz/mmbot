@@ -6,7 +6,7 @@ module.exports = class extends Command {
 		super(...args, {
 			aliases: ['av', 'pfp'],
 			description: 'Get link to user\'s avatar',
-			usage: '[user]'
+			usage: '[user:user]'
 		});
 	}
 
