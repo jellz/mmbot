@@ -24,7 +24,5 @@ $(document).ready(() => {
     .type('mmbot is an <strong>advanced</strong> bot.')
     .pause(1000)
     .delete()
-    .type('Get mmbot now.')
-    .pause(1000)
-    .delete();
+    .type('It\'s just a cool bot!');
 });
