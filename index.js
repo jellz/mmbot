@@ -1,4 +1,4 @@
-const { Client } = require('klasa');
+const { Client, PermissionLevels } = require('klasa');
 const { token, prefix } = require('./config.json');
 
 const client = module.exports = new Client({
@@ -6,6 +6,13 @@ const client = module.exports = new Client({
         disableEveryone: true
     },
     prefix,
+    permissionLevels: new PermissionLevels()
+        .add(0, () => true)
+        .add(5, (client, msg) => msg.member.roles.find(r => r.name.toLowerCase() == 'mmbot moderator'))
+        .add(6, (client, msg) => msg.guild && msg.member.permissions.has('MANAGE_GUILD'), { fetch: true })
+        .add(7, (client, msg) => msg.guild && msg.member.id === msg.guild.owner.id, { fetch: true })
+        .add(9, (client, msg) => msg.author.id == client.owner.id, { break: true })
+        .add(10, (client, msg) => msg.author.id == client.owner.id),
     disabledCorePieces: ['commands'],
     cmdEditing: true,
     typing: false,
@@ -15,7 +22,7 @@ const client = module.exports = new Client({
         clientStorage: { provider: 'rethinkdb' }
     },
     providers: { rethinkdb: { db: 'mmbot' } },
-    readyMessage: (client) => client.user.tag + ' is ready :)'
+    readymsg: (client) => client.user.tag + ' is ready :)'
 });
 client.login(token);
 
