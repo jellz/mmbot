@@ -14,6 +14,7 @@
     "helmet": "^3.12.1",
     "klasa": "dirigeants/klasa",
     "morgan": "^1.9.0",
+    "node-fetch": "^2.1.2",
     "rethinkdbdash": "^2.3.31",
     "to-zalgo": "^1.0.1"
   }
