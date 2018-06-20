@@ -10,7 +10,7 @@ module.exports = class extends Command {
 	}
 
 	async run(msg) {
-        throw 'Oh no there is an error :(';
+        throw new Error('Oh no there is an error :(');
 	}
 
 };
