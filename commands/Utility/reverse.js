@@ -10,7 +10,7 @@ module.exports = class extends Command {
 	}
 
 	async run(msg, [query]) {
-        return msg.channel.send(query.split('').reverse().join(''));
+      	return msg.channel.send(query.split('').reverse().join(''));
 	}
 
 };
