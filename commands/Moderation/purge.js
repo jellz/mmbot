@@ -7,7 +7,7 @@ module.exports = class extends Command {
 			permissionLevel: 5,
 			requiredPermissions: ['MANAGE_MESSAGES'],
 			runIn: ['text'],
-			description: 'Prunes a certain amount of messages w/o filter.',
+			description: 'Mass-delete messages (has filters too)',
 			usage: '<limit:integer> [link|invite|bots|you|me|upload|user:user]',
 			usageDelim: ' '
 		});
