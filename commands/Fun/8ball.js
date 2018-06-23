@@ -10,7 +10,7 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(msg, [question]) {
+	async run(msg, [query]) {
 		return msg.channel.send(question.endsWith('?') ?
 			`🎱 **${msg.author.username}**, ${answers[Math.floor(Math.random() * answers.length)]}` :
 			`🎱 **${msg.author.username}**, that doesn't look like a question, try again please.`);
