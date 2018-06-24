@@ -7,7 +7,7 @@
   "author": "Daniel G <xdjellz@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "hydrabolt/discord.js",
+    "discord.js": "bdistin/discord.js#fixratelimits",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "hastebin-generator": "^1.1.4",
@@ -15,7 +15,10 @@
     "klasa": "dirigeants/klasa",
     "morgan": "^1.9.0",
     "node-fetch": "^2.1.2",
+    "node-opus": "^0.3.0",
     "rethinkdbdash": "^2.3.31",
-    "to-zalgo": "^1.0.1"
+    "to-zalgo": "^1.0.1",
+    "youtube-search": "^1.1.1",
+    "ytdl-core": "^0.20.4"
   }
 }
