@@ -9,8 +9,6 @@ module.exports = async () => {
     app.use(require('helmet')());
     app.use(express.json());
     app.use('/assets', express.static('web/static'));
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'ejs');
 
     app.use(require('./routes/index.js'));
 
