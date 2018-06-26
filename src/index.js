@@ -27,4 +27,3 @@ const client = module.exports = new Client({
 });
 
 client.login(token);
-require('./web/web.js')();
