@@ -3,7 +3,7 @@ const { promisify } = require('util');
 const { filterVideos, playNextSong } = require('../../musicUtil.js');
 const search = promisify(require('youtube-search'));
 const ytdl = require('ytdl-core');
-const searchOptions = { maxResults: 5, key: require('../../../config.json').youtubeApiKey };
+const searchOptions = { maxResults: 5, key: require('../../config.json').youtubeApiKey };
 
 module.exports = class extends Command {
 
@@ -19,7 +19,7 @@ module.exports = class extends Command {
 
 	async run(msg, [query]) {
         const voiceChannel = msg.member.voiceChannel;
-        if (!voiceChannel) return msg.reply('you must be in a voice channel to play music!');
+        if (!voiceChannel || msg.guild.voiceConnection && voiceChannel !== msg.guild.voiceConnection.channel) return msg.reply('you must be in a voice channel to play music!');
 
 	    const permissions = voiceChannel.permissionsFor(msg.guild.me);
 		if (!permissions.has('CONNECT') || !permissions.has('SPEAK')) return msg.reply('I don\'t have the necessary permissions to join your voice channel (CONNECT & SPEAK).');
