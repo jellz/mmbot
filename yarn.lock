@@ -167,9 +167,9 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.npmjs.org/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
 
-discord.js@bdistin/discord.js#fixratelimits:
+discord.js@hydrabolt/discord.js:
   version "12.0.0-dev"
-  resolved "https://codeload.github.com/bdistin/discord.js/tar.gz/25be12def210e5908f61a5ff22257ce4ec3b3824"
+  resolved "https://codeload.github.com/hydrabolt/discord.js/tar.gz/6b3bfdd7dede049ba592e94ef1b1acc40a5e37fe"
   dependencies:
     form-data "^2.3.2"
     node-fetch "^2.1.2"

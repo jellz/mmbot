@@ -3,7 +3,7 @@ const { promisify } = require('util');
 const { filterVideos, playNextSong } = require('../../musicUtil.js');
 const search = promisify(require('youtube-search'));
 const ytdl = require('ytdl-core');
-const searchOptions = { maxResults: 5, key: require('../../config.json').youtubeApiKey };
+const searchOptions = { maxResults: 5, key: require('../../../config.json').youtubeApiKey };
 
 module.exports = class extends Command {
 

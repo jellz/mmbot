@@ -10,7 +10,7 @@
     "start": "node src/index.js"
   },
   "dependencies": {
-    "discord.js": "bdistin/discord.js#fixratelimits",
+    "discord.js": "hydrabolt/discord.js",
     "express": "^4.16.3",
     "hastebin-generator": "^1.1.4",
     "helmet": "^3.12.1",
