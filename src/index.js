@@ -1,5 +1,5 @@
 const { Client, PermissionLevels } = require('klasa');
-const { token, prefix } = require('./config.json');
+const { token, prefix } = require('../config.json');
 
 const client = module.exports = new Client({
     clientOptions: {
@@ -23,8 +23,7 @@ const client = module.exports = new Client({
         clientStorage: { provider: 'rethinkdb' }
     },
     providers: { rethinkdb: { db: 'mmbot' } },
-    readymsg: (client) => client.user.tag + ' is ready :)'
+    readyMessage: (client) => client.user.tag + ' is ready :)'
 });
-client.login(token);
 
-require('./web/web.js')();
+client.login(token);

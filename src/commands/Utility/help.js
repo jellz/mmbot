@@ -1,5 +1,5 @@
 const { Command, util } = require('klasa');
-const { baseUri } = require('../../config.json');
+const { baseUri } = require('../../../config.json');
 
 module.exports = class extends Command {
 
