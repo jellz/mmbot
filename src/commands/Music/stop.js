@@ -5,7 +5,7 @@ module.exports = class extends Command {
 	constructor(...args) {
 		super(...args, {
 			description: 'Terminate the current voice connection',
-            permissionLevel: 4
+        	permissionLevel: 4
         });
 	}
 
