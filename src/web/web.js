@@ -11,7 +11,6 @@ module.exports = async () => {
     app.use('/assets', express.static('web/static'));
 
     app.use(require('./routes/index.js'));
-
     app.use((req, res) => { res.sendStatus(404); });
 
     app.listen(port, () => { console.log('web listening on port ' + port); });
