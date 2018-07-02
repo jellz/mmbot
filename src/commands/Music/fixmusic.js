@@ -4,7 +4,7 @@ module.exports = class extends Command {
 
 	constructor(...args) {
 		super(...args, {
-			description: 'Fix mmbot\'s music system',
+			description: 'To use if bugs occur',
             permissionLevel: 4
         });
 	}

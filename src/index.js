@@ -23,7 +23,10 @@ const client = module.exports = new Client({
         clientStorage: { provider: 'rethinkdb' }
     },
     providers: { rethinkdb: { db: 'mmbot' } },
-    readyMessage: (client) => client.user.tag + ' is ready :)'
+    readyMessage: (client) => '[client] ' + client.user.tag + ' is ready :)'
 });
 
 client.login(token);
+require('./api/api.js')();
+// console.log('[api] starting in 6 seconds');
+// setTimeout(require('./api/api.js'), 6000, client);
