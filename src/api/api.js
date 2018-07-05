@@ -7,7 +7,7 @@ module.exports = async () => {
     app.use(require('helmet')());
 
     app.get('/', async (req, res) => {
-        res.status(200).json({ error: false, response: 'mmbot api is responsive' });
+        res.json({ response: 'mmbot api is responsive' });
     });
 
     app.use('/client', require('./routes/client.js'));
