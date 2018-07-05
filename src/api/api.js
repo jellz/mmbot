@@ -11,6 +11,7 @@ module.exports = async () => {
     });
 
     app.use('/client', require('./routes/client.js'));
+    app.use('/guild', require('./routes/guild.js'));
 
 
     await app.listen(port);
