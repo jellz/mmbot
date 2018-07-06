@@ -12,7 +12,7 @@ module.exports = class extends Command {
 		});
 	}
 
-	async run(message, [command]) {
+	async run(msg, [command]) {
         require('child_process').exec(command, (error, stdout, stderr) => {
             if (error) {
                 msg.channel.send(error);
