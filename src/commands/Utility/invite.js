@@ -1,4 +1,5 @@
 const { Command } = require('klasa');
+const { webUri } = require('../../../config.json');
 
 module.exports = class extends Command {
 
@@ -10,7 +11,7 @@ module.exports = class extends Command {
 	}
 
 	async run(msg) {
-		return msg.channel.send(`You can invite mmbot using this link: <https://discordapp.com/oauth2/authorize?client_id=${this.client.user.id}&permissions=8&scope=bot>`);
+		return msg.channel.send(`You can invite mmbot using this link: <**${webUri}/go/invite**>`);
 	}
 
 };
