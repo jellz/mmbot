@@ -3,6 +3,7 @@ module.exports = async () => {
     const app = module.exports = express();
     const port = process.env.PORT || 4000;
     
+    app.use(express.json());
     app.use(require('morgan')('dev'));
     app.use(require('helmet')());
 

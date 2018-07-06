@@ -7,7 +7,7 @@
   "author": "Daniel G <xdjellz@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node ./src/index.js"
   },
   "dependencies": {
     "discord.js": "hydrabolt/discord.js",
