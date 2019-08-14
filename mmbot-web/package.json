@@ -1,0 +1,24 @@
+{
+  "name": "mmbot-web",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:jellz/mmbot-web",
+  "author": "Daniel G <xdjellz@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+      "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "btoa": "^1.2.1",
+    "ejs": "^2.6.1",
+    "escape-html": "^1.0.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "express-session-rethinkdb": "^0.4.1",
+    "helmet": "^3.12.1",
+    "morgan": "^1.9.0",
+    "node-fetch": "^2.1.2",
+    "replace-string": "^1.1.0",
+    "sanitize-html": "^1.18.2"
+  }
+}

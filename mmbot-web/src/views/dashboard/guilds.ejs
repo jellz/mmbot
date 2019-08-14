@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../parts/head') %>
+    <title>Choose a guild &bullet; mmbot</title>
+</head>
+<body class="bg-light">
+    <%- include('../parts/nav', { page: 'dashboard' }) %>
+
+    <div class="container">
+
+        <h3 style="padding-top: 2%;" class="text-center">What guild would you like to manage?</h3>
+
+        <div class="guild-icons text-center">
+            <% guilds.forEach(guild => { %>
+                <a href="/dashboard/guild/<%= guild.id; %>/overview" class="server-icon-link" data-toggle="tooltip" data-placement="left" title="<%= guild.escapedName %>">
+                    <img width="62" height="62" alt="<%= guild.escapedName %>" src="<%= guild.iconUrl %>" class="rounded-circle" />
+                </a>
+            <% }) %>
+        </div>
+
+        <%- include('../parts/footer') %>
+    </div>
+
+    <%- include('../parts/scripts') %>
+</body>
+</html>

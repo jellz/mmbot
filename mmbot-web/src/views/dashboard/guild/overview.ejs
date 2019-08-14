@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../../parts/head') %>
+    <title>Overview &bullet; <%= guild.name %></title>
+</head>
+<body class="bg-light">
+    <%- include('../../parts/nav', { page: 'dashboard' }) %>
+
+    <div class="container">
+
+        <div class="container" style="padding-top: 2%;">
+            <div class="row">
+                <div class="col-sm">
+                    <%- include('../../parts/dashNav', { guild, user, current: 'overview' }) %>
+                </div>
+                <div class="col-sm-9">
+                    <h2>Overview</h2>
+                    <hr>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">ID</th>
+                                        <td><%= guild.id %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Owner</th>
+                                        <td><%= guild.owner.tag %> (<%= guild.owner.id %>)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Region</th>
+                                        <td><%= guild.region.toUpperCase() %></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Icon</th>
+                                        <td><img src="<%= guild.iconUrl %>"></img></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Banner</th>
+                                        <td><img src="https://discordapp.com/api/guilds/<%= guild.id %>/widget.png?style=banner2"></img></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../../parts/footer') %>
+    </div>
+
+    <%- include('../../parts/scripts') %>
+</body>
+</html>

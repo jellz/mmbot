@@ -1,0 +1,10 @@
+<p>Logged in as <%= user.username + '#' + user.discriminator %>, <a href="/dashboard/logout">logout?</a></p>
+<p>Currently managing <strong><%= guild.name %></strong>, <a href="/dashboard/guilds">switch?</a></p>
+<div class="list-group list-group-item-action">
+    <a href="/dashboard/guild/<%= guild.id %>/overview" class="list-group-item list-group-item-action <%= current == 'overview' ? 'active' : '' %>">Overview</a>
+    <a href="/dashboard/guild/<%= guild.id %>/config" class="list-group-item list-group-item-action <%= current == 'config' ? 'active' : '' %>">General Configuration</a>
+    <a href="/dashboard/guild/<%= guild.id %>/perms" class="list-group-item list-group-item-action <%= current == 'perms' ? 'active' : '' %>">Permissions</a>
+</div>
+<div style="padding-top: 5%;">
+    <p>Need help, have a suggestion, found a bug? <a href="https://discord.gg/CdaSWx6">Join the support server.</a></p>
+</div>

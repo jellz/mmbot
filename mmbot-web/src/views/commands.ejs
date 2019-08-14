@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('parts/head') %>
+    <title>Commands &bullet; mmbot</title>
+</head>
+<body class="bg-light">
+    <%- include('parts/nav', { page: 'commands' }) %>
+
+    <div class="container">
+        <%- include('parts/commandList', { commands }) %>
+
+        <%- include('parts/footer') %>
+    </div>
+
+    <%- include('parts/scripts') %>
+</body>
+</html>

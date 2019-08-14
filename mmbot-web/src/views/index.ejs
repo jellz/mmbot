@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('parts/head') %>
+    <title>Home &bullet; mmbot</title>
+</head>
+<body class="bg-light">
+    <%- include('parts/nav', { page: 'index' }) %>
+
+    <div class="jumbotron jumbotron-fluid jumbotron-home">
+        <div class="container">
+            <h1 class="display-4 text-white">mmbot</h1>
+            <p class="lead text-white jumbotron-home-typing"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3>Powerful Moderation</h3>
+                mmbot houses powerful moderation utilities that 
+                will let you sleep at night knowing
+                your Discord server is protected against spam &amp; advertising.
+            </div>
+            <div class="col-sm">
+                <h3>Intuitive Dashboard</h3>
+                mmbot's intuitive dashboard interface
+                houses all of mmbot's configuration.
+                This includes permissions, music configs
+                and moderation filters.
+            </div>
+            <div class="col-sm">
+                <h3>Utility, Fun &amp; Music</h3>
+                mmbot comes packed with fun and helpful commands including
+                image manipulation, memes and cat facts ;)<br>
+                Oh, and did I mention it has music too?
+            </div>
+        </div>
+        <%- include('parts/footer') %>
+    </div>
+
+    <%- include('parts/scripts') %>
+</body>
+</html>

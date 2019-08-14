@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('../../parts/head') %>
+    <title>Overview &bullet; <%= guild.name %></title>
+</head>
+<body class="bg-light">
+    <%- include('../../parts/nav', { page: 'dashboard' }) %>
+
+    <div class="container">
+
+        <div class="container" style="padding-top: 2%;">
+            <div class="row">
+                <div class="col-sm">
+                    <%- include('../../parts/dashNav', { guild, user, current: 'config' }) %>
+                </div>
+                <div class="col-sm-9">
+                    <h2>General Configuration</h2>
+                    <hr>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <h3>Prefix</h3>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="config-general-prefix" placeholder="New prefix" aria-label="New prefix" aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-success" type="button" id= "config-save" data-option="prefix">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../../parts/footer') %>
+    </div>
+
+    <%- include('../../parts/scripts') %>
+    <script>
+        $(async () => {
+            const save = $('#config-save');
+
+            const prefixInput = $('#config-general-prefix');
+
+            const prefix = '<%= guild.configs.prefix %>';
+
+            $('#config-general-prefix').val(prefix);
+
+            save.click(async (e) => {
+                var option = $(e.target).attr('data-option');
+                if (option == 'prefix') {
+                    if (prefixInput.val().length > 10) {
+                        $.notify('Prefix too long (maximum length: 10)');
+                        return prefixInput.val(prefix);
+                    }
+                    const res = await fetch(`/api/guild/<%= guild.id %>/prefix`, {
+                        method: 'PUT',
+                        credentials: 'same-origin',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            'prefix': prefixInput.val()
+                        })
+                    });
+                    const json = await res.json();
+                    if (json.error) return $.notify('Something went wrong while updating prefix');
+                    console.log('prefix updated');
+                    return $.notify('Prefix updated', 'success');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

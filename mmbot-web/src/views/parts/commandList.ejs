@@ -1,0 +1,13 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Usage</th>
+            <th>Description</th>
+            <th>Permission Level</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%- commands.map(c => `<tr><td>${c.usage}</td><td>${c.description}</td><td>${c.permission}</td><td>${c.category}</td></tr>`).join('') %>
+    </tbody>
+</table>
